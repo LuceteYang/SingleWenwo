@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wenwoandroidnew.discover.WeatherActivity"
+    android:background="@drawable/weather">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:background="#AA000000">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="2015년 12월 8일"
+            android:id="@+id/weather_date"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="서울 중구 을지로2가"
+            android:id="@+id/weather_aderess"
+            android:layout_below="@+id/weather_date"
+            android:layout_alignLeft="@+id/weather_date"
+            android:layout_alignStart="@+id/weather_date"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorWhite" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="어제"
+                android:id="@+id/textView37"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/colorWhite"
+                android:layout_marginLeft="20dp" />
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/iv_yesday"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textView37"
+                android:layout_toEndOf="@+id/textView37"
+                android:src="@drawable/sky_01"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="맑음"
+                android:id="@+id/weather_yesday_condition"
+                android:textColor="@color/colorWhite"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_yesday"
+                android:layout_toEndOf="@+id/iv_yesday"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="6.00"
+                android:id="@+id/weather_yesday_low_temp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="#005eff"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="50dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="6.00"
+                android:id="@+id/weather_yesday_high_temp"
+                android:textColor="#ff3700"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="50dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/relativeLayout3"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="내일"
+                android:id="@+id/textView38"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/colorWhite"
+                android:layout_marginLeft="20dp" />
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/iv_tomm"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textView38"
+                android:layout_toEndOf="@+id/textView38"
+                android:src="@drawable/sky_01"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="맑음"
+                android:id="@+id/weather_tomm_condition"
+                android:textColor="@color/colorWhite"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_tomm"
+                android:layout_toEndOf="@+id/iv_tomm"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="6.00"
+                android:id="@+id/weather_tomm_high_temp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="#ff3700"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="6.00"
+                android:id="@+id/weather_tomm_low_temp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="#005eff"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/relativeLayout4"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="모레"
+                android:id="@+id/textView39"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/colorWhite"
+                android:layout_marginLeft="20dp" />
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/iv_after"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textView39"
+                android:layout_toEndOf="@+id/textView39"
+                android:src="@drawable/sky_01"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="맑음"
+                android:id="@+id/weather_after_condition"
+                android:textColor="@color/colorWhite"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_after"
+                android:layout_toEndOf="@+id/iv_after"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="6.00"
+                android:id="@+id/weather_after_high_temp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="#ff3700"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="6.00"
+                android:id="@+id/weather_after_low_temp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="#005eff"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="20dp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:id="@+id/iv_today"
+            android:src="@drawable/sky_01"
+            android:layout_below="@+id/weather_aderess"
+            android:layout_alignLeft="@+id/weather_aderess"
+            android:layout_alignStart="@+id/weather_aderess"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="맑음"
+            android:id="@+id/weather_today_condition"
+            android:layout_alignTop="@+id/iv_today"
+            android:layout_toRightOf="@+id/iv_today"
+            android:layout_toEndOf="@+id/iv_today"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/weather_today_high_temp"
+            android:layout_below="@+id/weather_aderess"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#ff3700"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/weather_today_low_temp"
+            android:layout_below="@+id/weather_today_high_temp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#005eff"
+            android:layout_marginRight="50dp" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/abc43"
+    android:layout_height="231dp">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/q_seeds_28x28"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large Text"
+        android:layout_gravity="center_horizontal"
+        android:allowUndo="false"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/q_img_select_48x48"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="7dp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:layout_gravity="center_horizontal"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="89dp"
+            android:layout_height="89dp"
+            android:id="@+id/iv_me_header_setting_profile"
+            android:src="@drawable/logo"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:text="Zirui Hwang"
+            android:id="@+id/tv_me_setting_header_name"
+            android:layout_gravity="center_horizontal"
+            android:textSize="18sp"
+            android:visibility="visible"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_me_header_setting_profile"
+            android:layout_toEndOf="@+id/iv_me_header_setting_profile"
+            android:layout_marginLeft="10dp" />
+    </RelativeLayout>
+
+</LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
+</LinearLayout>

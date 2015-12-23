@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context="com.wenwo.wenwoandroid.RecordActivity">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView22"
+        android:src="@drawable/q_voice_recordbg_620x640"
+        android:layout_gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_record_run"
+        android:src="@drawable/q_voice_play_84x84"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center" />
+    <tr.xip.markview.MarkView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/v_progress_record"
+        android:layout_above="@+id/iv_record_run"
+        app:mv_mark="30"
+        app:mv_max="30"
+        app:mv_ringWidth="12dp"
+        app:mv_strokeWidth="12dp"
+        app:mv_textSize="48sp"
+        android:visibility="gone"
+        android:layout_centerInParent="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="recoding"
+        android:id="@+id/tv_record_time"
+        android:layout_below="@+id/v_progress_record"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        />
+
+
+</RelativeLayout>

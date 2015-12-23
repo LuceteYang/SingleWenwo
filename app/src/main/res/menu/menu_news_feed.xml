@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_news_feed_friend"
+        android:orderInCategory="100"
+        android:title="Friend"
+        android:icon="@drawable/header_friend"
+        app:showAsAction="ifRoom" />
+</menu>

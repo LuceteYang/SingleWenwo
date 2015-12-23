@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1E46"
+    tools:context="com.wenwo.wenwoandroid.join.JoinChoiceActivity"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_join_choice_close"
+        android:src="@drawable/header_cancel_28x28"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="27dp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView19"
+        android:src="@drawable/bi_login"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="60dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_quest"
+        android:src="@drawable/signup_q_244x244"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_answer"
+        android:src="@drawable/signup_a_244x244"
+        android:layout_gravity="center" />
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1e1e46</color>
+    <color name="colorBackSplash">#0E0E23</color>
+    <color name="colorPrimaryDark">#1e1e46</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorSplash">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorMain">#EBEBEB</color>
+    <drawable name="windowBackground">#00FFFFFF</drawable>
+    <color name="splash">#101028</color>
+
+    <color name="prime_1">#16ffeb</color>
+    <color name="extra_1">#11ffc6</color>
+
+    <color name="status_0">#1E1E46</color>
+    <color name="status_1">#a0a0a0</color>
+    <color name="status_2">#ff0063</color>
+
+
+</resources>

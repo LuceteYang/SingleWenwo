@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:paddingLeft="10dp"
+    android:background="@color/colorMain"
+    android:paddingRight="10dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/editText"
+        android:hint="Search friend"
+        android:textSize="12sp"
+        android:background="@color/colorWhite"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#1e1e1e"
+        android:textColorHint="#646464" />
+</RelativeLayout>

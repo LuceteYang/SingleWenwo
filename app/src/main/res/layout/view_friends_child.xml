@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:paddingTop="5dp"
+    android:background="@color/colorWhite"
+    android:paddingBottom="5dp">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorMain"></LinearLayout>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/icon_delete"
+            android:src="@drawable/delete_icon"
+            android:layout_alignTop="@+id/tv_friend_name"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:visibility="invisible" />
+
+        <com.github.siyamed.shapeimageview.CircularImageView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_profile_photo"
+            android:src="@drawable/servicebi"
+            android:visibility="visible"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/icon_delete"
+            android:layout_toEndOf="@+id/icon_delete"
+            android:layout_marginLeft="11dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/tv_friend_name"
+            android:textColor="#1e1e1e"
+            android:textSize="10sp"
+            android:layout_marginLeft="15dp"
+            android:visibility="visible"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_profile_photo"
+            android:layout_toEndOf="@+id/iv_profile_photo"
+            android:layout_marginStart="15dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/onGoFriendDetail"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Texts"
+                android:id="@+id/tv_friend_share"
+                android:clickable="true"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_alignTop="@+id/imageView38"
+                android:layout_toLeftOf="@+id/imageView38"
+                android:layout_toStartOf="@+id/imageView38" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView38"
+                android:src="@drawable/friends_more_16x20"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

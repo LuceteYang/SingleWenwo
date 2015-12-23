@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1E1E46"
+    tools:context="com.wenwo.wenwoandroid.join.CertificationEmailActivity">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_certification_close"
+        android:src="@drawable/header_cancel_28x28"
+        android:onClick="onGoEmailLogin"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="27dp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/bi_login"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="64dp" />
+    <android.support.design.widget.TextInputLayout android:layout_width="278dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_certify_email"
+        android:hint="@string/prompt_email"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:textColor="#ffffff"
+        android:shadowColor="#ffffff" />
+</android.support.design.widget.TextInputLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_certify_email"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/certified"
+        android:layout_marginTop="42dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/certify_email_explain"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="85dp"
+        android:onClick="onGoEmailLogin"
+        android:src="@drawable/email_login" />
+</LinearLayout>

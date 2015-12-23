@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorMain"
+    tools:context="com.wenwo.wenwoandroid.LoginRequestFragment">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_servicebi"
+        android:src="@drawable/bi_signup_204x216"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="86dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_wechat_login"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="104dp"
+        android:onClick="onWechatLogin"
+        android:src="@drawable/login_wechat_484x80"
+        android:layout_gravity="top|center_horizontal" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_email_login"
+        android:layout_marginTop="10dp"
+        android:onClick="onEmailLogin"
+        android:src="@drawable/login_email_484x80"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

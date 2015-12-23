@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/colorMain"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/tv_writer_magazine_name"
+            android:layout_gravity="left|top"
+            android:layout_marginLeft="85dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tv_writer_magazine_time"
+                android:layout_marginLeft="85dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium Text"
+                android:id="@+id/tv_writer_magazine_place"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="5dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/tv_magazine_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingRight="30dp"
+            android:paddingLeft="30dp"
+            android:layout_marginTop="30dp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_writer_magazine"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/abc43"
+            android:layout_marginTop="30dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/iv_writer_magazine_profile"
+        android:src="@drawable/servicebi"
+        android:layout_marginLeft="30dp" />
+
+</FrameLayout>

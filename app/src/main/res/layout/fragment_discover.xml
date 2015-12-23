@@ -1,0 +1,223 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorMain"
+    android:layout_height="match_parent" tools:context="com.wenwo.wenwoandroid.DiscoverFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/btn_qr"
+        android:layout_gravity="center_horizontal"
+        android:background="#ffffff"
+        android:layout_marginTop="24dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView20"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/discover_code"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/discover_qr"
+            android:id="@+id/textView16"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageView20"
+            android:layout_toEndOf="@+id/imageView20"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView43"
+            android:src="@drawable/discover_more_24x32"
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/btn_map"
+        android:layout_gravity="center_horizontal"
+        android:background="#ffffff"
+        android:layout_marginTop="24dp" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView39"
+            android:src="@drawable/discover_map"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/discover_map"
+            android:id="@+id/textView19"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageView39"
+            android:layout_toEndOf="@+id/imageView39"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView44"
+            android:src="@drawable/discover_more_24x32"
+            android:layout_alignTop="@+id/textView19"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="right"
+        android:id="@+id/btn_weather"
+        android:background="#ffffff">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView40"
+            android:src="@drawable/discover_weather"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView21"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageView40"
+            android:layout_toEndOf="@+id/imageView40"
+            android:layout_marginLeft="20dp"
+            android:text="@string/discover_weather" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView45"
+            android:src="@drawable/discover_more_24x32"
+            android:layout_alignTop="@+id/textView21"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/btn_exchange"
+        android:background="#ffffff">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView41"
+            android:src="@drawable/discover_yuan"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/discover_hwanyual"
+            android:id="@+id/textView23"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageView41"
+            android:layout_toEndOf="@+id/imageView41"
+            android:layout_marginLeft="20dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView46"
+            android:src="@drawable/discover_more_24x32"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/btn_setting"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:background="#ffffff">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView42"
+            android:src="@drawable/discover_setting"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/discover_setting"
+            android:id="@+id/textView30"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageView42"
+            android:layout_toEndOf="@+id/imageView42"
+            android:layout_marginLeft="20dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView47"
+            android:src="@drawable/discover_more_24x32"
+            android:layout_alignTop="@+id/textView30"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp" />
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그아웃"
+        android:id="@+id/btn_logout"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="답변자"
+        android:id="@+id/btn_answer"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

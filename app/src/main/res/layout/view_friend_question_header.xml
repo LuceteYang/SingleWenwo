@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@color/colorMain">
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal|top"
+        android:background="#ffffff"
+        android:layout_marginLeft="11dp"
+        android:layout_marginRight="11dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Medium Text"
+            android:id="@+id/tv_friend_question_name"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="70dp"
+            android:layout_marginStart="73dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="12sp"
+            android:textColor="#141414" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ic_friend_question"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/friends_favorite_40x48"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp" />
+
+    </RelativeLayout>
+
+    <com.github.siyamed.shapeimageview.CircularImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/iv_friend_question_picture"
+        android:layout_gravity="left|center_vertical"
+        android:src="@drawable/servicebi"
+        android:layout_marginLeft="25dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_gravity="left|bottom"
+        android:layout_marginLeft="11dp"
+        android:layout_marginRight="11dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView37"
+            android:layout_gravity="left|bottom"
+            android:src="@drawable/friends_share_24x24"
+            android:layout_marginLeft="70dp"
+            android:layout_marginStart="70dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="13"
+            android:id="@+id/tv_friend_question_count"
+            android:layout_gravity="left|center_vertical"
+            android:textSize="12sp"
+            android:textColor="#141414"
+            android:layout_marginLeft="9dp"
+            android:layout_marginStart="9dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/imageView37"
+            android:layout_toEndOf="@+id/imageView37" />
+
+    </RelativeLayout>
+
+</FrameLayout>

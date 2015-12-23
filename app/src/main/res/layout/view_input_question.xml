@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/icon_shop_seed"
+            android:layout_gravity="center"
+            android:src="@drawable/abc_btn_check_to_on_mtrl_000"
+            android:layout_alignBottom="@+id/text_now_seed"
+            android:onClick="OnGoCharge"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:id="@+id/text_now_seed"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/imageView21"
+            android:layout_toEndOf="@+id/imageView21"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:textSize="10sp"
+            android:textColor="#646464" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:id="@+id/textView4"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/text_now_seed"
+            android:layout_toEndOf="@+id/text_now_seed"
+            android:layout_marginTop="15dp"
+            android:textSize="10sp"
+            android:textColor="#646464" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:id="@+id/text_my_seed"
+            android:gravity="right"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView4"
+            android:layout_toEndOf="@+id/textView4"
+            android:layout_marginTop="15dp"
+            android:textSize="10sp"
+            android:textColor="#646464" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView21"
+            android:src="@drawable/q_needseeds_20x20"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_alignTop="@+id/text_now_seed"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="제목(선택사항)"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:id="@+id/et_question_title"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginRight="11dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#323232"
+        android:textColorHint="#c8c8c8" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorMain"></LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/200자"
+            android:id="@+id/textView6"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="11dp"
+            android:layout_marginTop="13dp"
+            android:textColor="#828282" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/text_input_counter"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/textView6"
+            android:layout_toStartOf="@+id/textView6"
+            android:layout_marginTop="13dp"
+            android:textColor="#828282" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginTop="32dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="무엇이 궁금한가요?"
+            android:id="@+id/et_question_content"
+            android:background="@null"
+            android:maxLength="200"
+            android:textSize="16sp"
+            android:textColor="#646464"
+            android:textColorHint="#c8c8c8"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="125dp"
+                android:id="@+id/input_image1"
+                android:src="@drawable/quest"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="10dp" />
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="125dp"
+                android:id="@+id/input_image2"
+                android:src="@drawable/quest"
+                android:scaleType="centerCrop"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/load_image"
+            android:src="@drawable/q_img_correctimg"
+            android:layout_marginLeft="11dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_listen_record"
+                android:background="@null"
+                android:src="@drawable/q_voice_replay_320x80"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_record_again"
+                android:background="@null"
+                android:src="@drawable/q_voice_record_320x80"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_start_record"
+            android:layout_gravity="center_horizontal|top"
+            android:background="@null"
+            android:src="@drawable/q_voice_record_640x80"
+            android:visibility="visible" />
+
+    </FrameLayout>
+
+</LinearLayout>

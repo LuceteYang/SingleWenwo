@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/colorMain"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="69dp"
+        android:id="@+id/relativeLayout2">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView32"
+            android:layout_gravity="right"
+            android:src="@drawable/signup_bitalk_108x88"
+            android:layout_alignTop="@+id/img_servicebi"
+            android:layout_toRightOf="@+id/img_servicebi"
+            android:layout_toEndOf="@+id/img_servicebi" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/img_servicebi"
+            android:src="@drawable/bi_signup_204x216"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/register_question"
+        android:id="@+id/textView14"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="22dp"
+        android:password="false"
+        android:textSize="10sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@+id/relativeLayout2"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView36"
+        android:layout_gravity="center_horizontal"
+        android:visibility="visible"
+        android:src="@drawable/signup_q_208x232"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" />
+
+
+</RelativeLayout>

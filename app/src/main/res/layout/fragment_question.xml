@@ -1,0 +1,41 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent" tools:context="com.wenwo.wenwoandroid.question.QuestionFragment">
+
+     <!--TODO: Update blank fragment layout -->
+    <android.support.v4.app.FragmentTabHost
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/tabHost"
+        android:layout_gravity="center_horizontal|top">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:orientation="vertical">
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:showDividers="none"
+                android:tabStripEnabled="false"
+                android:background="@color/colorMain"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"></TabWidget>
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0"/>
+            <FrameLayout
+                android:id="@+id/question_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </android.support.v4.app.FragmentTabHost>
+</FrameLayout>

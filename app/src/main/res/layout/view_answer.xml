@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="62dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="20dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView7"
+                android:layout_gravity="right"
+                android:src="@drawable/newsfeed_reportalram_32x36" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="48dp"
+            android:background="@color/colorMain"></LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tv_answer_name"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="61dp"
+                android:visibility="visible"
+                android:textColor="#141414"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Small Text"
+                android:id="@+id/tv_answer_level"
+                android:textSize="8sp"
+                android:textColor="#646464"
+                android:layout_below="@+id/tv_answer_name"
+                android:layout_alignLeft="@+id/tv_answer_name"
+                android:layout_alignStart="@+id/tv_answer_name"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/text_answer_accept_percent"
+                android:textSize="8sp"
+                android:textColor="#646464"
+                android:layout_alignTop="@+id/tv_answer_level"
+                android:layout_toRightOf="@+id/textView22"
+                android:layout_toEndOf="@+id/textView22" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/icon_answer"
+                android:src="@drawable/myfeed_img"
+                android:layout_gravity="right"
+                android:foregroundGravity="right"
+                android:layout_alignBottom="@+id/text_answer_accept_percent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="|"
+                android:id="@+id/textView22"
+                android:textSize="8sp"
+                android:layout_alignTop="@+id/text_answer_accept_percent"
+                android:layout_toRightOf="@+id/tv_answer_level"
+                android:layout_toEndOf="@+id/tv_answer_level"
+                android:layout_marginRight="4dp"
+                android:layout_marginLeft="4dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Medium Text"
+            android:lineSpacingExtra="4dp"
+            android:id="@+id/tv_answer_content"
+            android:layout_below="@+id/icon_answer"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="31dp"
+            android:textSize="14sp"
+            android:textColor="#646464"
+            android:layout_marginBottom="30dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:transitionGroup="false"
+            android:id="@+id/answerImageView"
+            android:layout_below="@+id/tv_answer_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="31dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="125dp"
+                android:id="@+id/imageView8"
+                android:layout_weight="0.5"
+                android:src="@drawable/img_view1"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                android:background="@color/colorMain"
+                android:padding="1dp" />
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="125dp"
+                android:id="@+id/imageView9"
+                android:layout_weight="0.5"
+                android:src="@drawable/img_view2"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                android:background="@color/colorMain"
+                android:padding="1dp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/imageView9"
+            android:layout_alignStart="@+id/imageView9">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView12"
+                android:src="@drawable/newsfeed_report"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="2dp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <com.github.siyamed.shapeimageview.RoundedImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:id="@+id/iv_answer_profile"
+        android:layout_gravity="top|left"
+        android:src="@drawable/answer"
+        android:layout_marginTop="62dp"
+        android:layout_marginLeft="11dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:background="@color/colorMain"></LinearLayout>
+
+
+</FrameLayout>

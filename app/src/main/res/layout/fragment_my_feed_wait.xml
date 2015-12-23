@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorMain"
+    android:padding="10dp"
+    tools:context="com.wenwo.wenwoandroid.newsfeed.myfeed.MyFeedWaitFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/colorMain"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:smoothScrollbar="true"
+        app:ptrMode="pullUpFromBottom"
+        android:id="@+id/my_feed_wait"
+        android:layout_gravity="left|center_vertical" />
+
+</LinearLayout>

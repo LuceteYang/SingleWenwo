@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="224dp"
+    android:weightSum="1"
+    android:background="@color/colorMain">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:background="#ffffff"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:layout_marginTop="24dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="171dp"
+            android:id="@+id/rt_magazine_clickview">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="90sp"
+                android:id="@+id/tv_rtmagazine_content"
+                android:text="t"
+                android:lineSpacingExtra="4dp"
+                android:ellipsize="end"
+                android:textSize="12sp"
+                android:layout_below="@+id/linearLayout5"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#646464" />
+
+            <RelativeLayout
+                android:layout_width="68dp"
+                android:layout_height="19dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="#000000"
+                android:id="@+id/linearLayout5"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:text="Emergency"
+                    android:id="@+id/tv_rtmagazine_category"
+                    android:textSize="10dp"
+                    android:layout_alignParentTop="false"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentBottom="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentRight="false" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:background="@drawable/topline"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/linearLayout4">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:id="@+id/rt_likeview">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rt_likeicon"
+                    android:src="@drawable/contents_like"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="19dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="19dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="83"
+                    android:id="@+id/tv_rtmagazine_like"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/rt_likeicon"
+                    android:layout_toEndOf="@+id/rt_likeicon" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:id="@+id/rt_shareview">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rt_shareicon"
+                    android:src="@drawable/contents_save"
+                    android:layout_gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="89"
+                    android:id="@+id/tv_rtmagazine_save"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/rt_shareicon"
+                    android:layout_toEndOf="@+id/rt_shareicon" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:id="@+id/iv_rtmagazine"
+        android:src="@drawable/servicebi"
+        android:layout_weight="0.5"
+        android:layout_marginTop="24dp"
+        android:scaleType="centerCrop" />
+
+</LinearLayout>

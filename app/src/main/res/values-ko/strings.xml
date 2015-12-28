@@ -72,7 +72,7 @@
     <string name="discover_map">지도</string>
     <string name="discover_hwanyual">환율 정보</string>
     <string name="discover_weather">날씨 정보</string>
-    <string name="discover_setting">설정</string>
+    <string name="discover_logout">로그아웃</string>
     <string name="sunflower">Sunflower Seed Statation</string>
     <string name="myseeds">보유 해바라기씨</string>
 </resources>

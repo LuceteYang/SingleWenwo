@@ -8,10 +8,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
@@ -37,7 +41,7 @@ public class
 
     private PullToRefreshListView listView;
 //    ListView listView;
-    private AnswerAdapter mAdapter;
+    private AnswererAdapter mAdapter;
     private QuestionItem item;
     private Dialog dialog;
     AnswerFooterView footerview;
@@ -60,8 +64,9 @@ public class
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_answerer_list, container, false);
         listView = (PullToRefreshListView)view.findViewById(R.id.answerer_listView);
-        mAdapter = new AnswerAdapter();
+        mAdapter = new AnswererAdapter();
         listView.setAdapter(mAdapter);
+
         //번들을 통해 값전달
         Bundle b = getArguments();
         item =b.getParcelable("question");
@@ -87,6 +92,8 @@ public class
         }else if(item.getStatus().equals("0")){
             ModuleAnswer.getAnswerList(this, Integer.parseInt(item.getQnum()), 1);
         }
+
+
 
 
         return view;
@@ -144,6 +151,5 @@ public class
             d.AnswerType = questionIcon;
             mAdapter.add(d);
         }
-        listView.getRefreshableView().addFooterView(footerview);
     }
 }

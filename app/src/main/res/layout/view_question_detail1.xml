@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
             android:text="Emergency"
-            android:id="@+id/text_category_detail"
+            android:id="@+id/text_category_detail_w"
             android:textSize="10dp"
             android:layout_alignParentTop="false"
             android:layout_centerInParent="true"
@@ -40,7 +40,7 @@
             android:textColor="#FFFFFF"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="4"
-            android:id="@+id/text_vote_number_detail"
+            android:id="@+id/text_vote_number_detail_w"
             android:layout_alignParentBottom="true"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
@@ -50,7 +50,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView2"
+            android:id="@+id/imageView2_W"
             android:layout_centerVertical="true"
             android:layout_marginLeft="6dp"
             android:layout_alignParentLeft="true"
@@ -58,7 +58,7 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/clickview"
+        android:id="@+id/clickview_w"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/icon_question_detail"
+                android:id="@+id/icon_question_detail_w"
                 android:src="@drawable/myfeed_img"
                 android:layout_gravity="right"
                 android:foregroundGravity="right"
@@ -92,7 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text"
-                android:id="@+id/text_question_name_detail"
+                android:id="@+id/text_question_name_detail_w"
                 android:layout_marginLeft="71dp"
                 android:layout_marginTop="3dp"
                 android:textSize="12sp"
@@ -102,24 +102,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Small Text"
-                android:id="@+id/text_question_location_detail"
+                android:id="@+id/text_question_location_detail_w"
                 android:textColor="#646464"
                 android:textSize="8sp"
-                android:layout_below="@+id/text_question_name_detail"
-                android:layout_alignLeft="@+id/text_question_name_detail"
-                android:layout_alignStart="@+id/text_question_name_detail"
+                android:layout_below="@+id/text_question_name_detail_w"
+                android:layout_alignLeft="@+id/text_question_name_detail_w"
+                android:layout_alignStart="@+id/text_question_name_detail_w"
                 android:layout_marginTop="2dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="|"
-                android:id="@+id/textView20"
+                android:id="@+id/textView20_w"
                 android:textSize="8sp"
-                android:layout_alignBaseline="@+id/text_question_location_detail"
-                android:layout_alignBottom="@+id/text_question_location_detail"
-                android:layout_toRightOf="@+id/text_question_location_detail"
-                android:layout_toEndOf="@+id/text_question_location_detail"
+                android:layout_alignBaseline="@+id/text_question_location_detail_w"
+                android:layout_alignBottom="@+id/text_question_location_detail_w"
+                android:layout_toRightOf="@+id/text_question_location_detail_w"
+                android:layout_toEndOf="@+id/text_question_location_detail_w"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp" />
 
@@ -127,12 +127,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text"
-                android:id="@+id/text_question_time_detail"
+                android:id="@+id/text_question_time_detail_w"
                 android:textColor="#646464"
                 android:textSize="8sp"
-                android:layout_alignTop="@+id/textView20"
-                android:layout_toRightOf="@+id/textView20"
-                android:layout_toEndOf="@+id/textView20" />
+                android:layout_alignTop="@+id/textView20_w"
+                android:layout_toRightOf="@+id/textView20_w"
+                android:layout_toEndOf="@+id/textView20_w" />
         </RelativeLayout>
 
         <TextView
@@ -141,7 +141,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
             android:lineSpacingExtra="4dp"
-            android:id="@+id/text_question_title_detail"
+            android:id="@+id/text_question_title_detail1_w"
             android:layout_marginTop="20dp"
             android:layout_below="@+id/linearLayout"
             android:layout_alignParentLeft="true"
@@ -156,9 +156,9 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
-            android:id="@+id/text_question_context_detail"
+            android:id="@+id/text_question_context_detail1_w"
             android:lineSpacingExtra="4dp"
-            android:layout_below="@+id/text_question_title_detail"
+            android:layout_below="@+id/text_question_title_detail1_w"
             android:layout_alignParentLeft="false"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="11dp"
@@ -176,15 +176,15 @@
             android:layout_alignParentStart="true"
             android:layout_marginLeft="11dp"
             android:layout_marginRight="11dp"
-            android:id="@+id/imageviewLayout"
+            android:id="@+id/imageviewLayout_w"
             android:layout_marginBottom="31dp"
-            android:layout_below="@+id/text_question_context_detail"
+            android:layout_below="@+id/text_question_context_detail1_w"
             android:visibility="gone">
 
             <ImageView
                 android:layout_width="160dp"
                 android:layout_height="125dp"
-                android:id="@+id/iv_question_detail1"
+                android:id="@+id/iv_question_detail1_w"
                 android:src="@drawable/servicebi"
                 android:visibility="gone"
                 android:scaleType="centerCrop" />
@@ -192,10 +192,10 @@
             <ImageView
                 android:layout_width="160dp"
                 android:layout_height="125dp"
-                android:id="@+id/iv_question_detail2"
+                android:id="@+id/iv_question_detail2_w"
                 android:src="@drawable/servicebi"
                 android:visibility="gone"
-                android:layout_alignTop="@+id/iv_question_detail1"
+                android:layout_alignTop="@+id/iv_question_detail1_w"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:scaleType="centerCrop" />
@@ -210,24 +210,25 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageView4"
-                android:src="@drawable/newsfeed_report"
+                android:id="@+id/imageView4_w"
+                android:src="@drawable/btn_answer"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="11dp"
-                android:visibility="gone" />
+                android:visibility="visible" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/iv_modify_question"
-                android:src="@drawable/newsfeed_correct"
+                android:id="@+id/iv_answer"
+                android:src="@drawable/btn_answer"
                 android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/imageView4"
-                android:layout_toStartOf="@+id/imageView4"
+                android:layout_toLeftOf="@+id/imageView4_w"
+                android:layout_toStartOf="@+id/imageView4_w"
                 android:layout_marginRight="11dp"
-                android:layout_alignParentRight="true" />
+                android:layout_alignParentRight="true"
+                android:visibility="gone" />
 
         </RelativeLayout>
 
@@ -237,7 +238,7 @@
             android:background="#ff006e"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:id="@+id/relativeLayout"
+            android:id="@+id/relativeLayout_w"
             android:visibility="visible">
 
             <TextView
@@ -245,7 +246,7 @@
                 android:layout_height="wrap_content"
                 android:text="New Text"
                 android:textColor="#ffffff"
-                android:id="@+id/text_question_accept_detail"
+                android:id="@+id/text_question_accept_detail_w"
                 android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
@@ -258,7 +259,7 @@
     <com.github.siyamed.shapeimageview.RoundedImageView
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:id="@+id/imageView3_detail"
+        android:id="@+id/imageView3_detail_w"
         android:layout_gravity="top|left"
         android:src="@drawable/answer"
         android:layout_marginLeft="10dp" />

@@ -171,6 +171,8 @@
         </activity>
         <activity android:name=".discover.WeatherActivity" >
         </activity>
+        <activity android:name=".answerer.AnewsfeedActivity" >
+        </activity>
         <activity android:name=".answerer.AnswerActivity" >
         </activity>
     </application>

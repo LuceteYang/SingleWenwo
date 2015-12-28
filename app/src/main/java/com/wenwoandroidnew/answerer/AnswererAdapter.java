@@ -74,11 +74,11 @@ public class AnswererAdapter extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
         switch (getItemViewType(position)) {
             case TYPE_INDEX_QUESTION: {
-                final QuestionDetailView view;
-                if (convertView != null && convertView instanceof QuestionDetailView) {
-                    view = (QuestionDetailView)convertView;
+                final QuestionDetail1View view;
+                if (convertView != null && convertView instanceof QuestionDetail1View) {
+                    view = (QuestionDetail1View)convertView;
                 } else {
-                    view = new QuestionDetailView(parent.getContext());
+                    view = new QuestionDetail1View(parent.getContext());
                 }
                 view.setQuestionInfo((QuestionItem) items.get(position));
                 view.getQuestionImage1().setOnClickListener(new View.OnClickListener() {
@@ -102,10 +102,7 @@ public class AnswererAdapter extends BaseAdapter {
                 view.getModifyImage().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(v.getContext(), HomeActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        intent.putExtra("modify","TRUE");
-                        intent.putExtra("Status",view.getQuestionInfo().getType());
+                        Intent intent = new Intent(v.getContext(), AnswerActivity.class);
                         v.getContext().startActivity(intent);
                     }
                 });

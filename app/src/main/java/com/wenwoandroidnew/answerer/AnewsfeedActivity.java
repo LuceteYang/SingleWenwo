@@ -8,6 +8,7 @@ import android.os.Parcel;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,6 +23,7 @@ import com.wenwoandroidnew.R;
 import com.wenwoandroidnew.newsfeed.FeedAdapter;
 import com.wenwoandroidnew.newsfeed.QuestionItem;
 import com.wenwoandroidnew.system.common.CallResult;
+import com.wenwoandroidnew.system.manager.PropertyManager;
 import com.wenwoandroidnew.system.model.ModelQuestionList;
 import com.wenwoandroidnew.system.model.query.ModelQuestionQuery;
 import com.wenwoandroidnew.system.module.ModelPicture;
@@ -86,7 +88,7 @@ public class AnewsfeedActivity extends AppCompatActivity implements CallResult<M
         setContentView(R.layout.activity_answer);
         listView = (PullToRefreshListView)findViewById(R.id.answer_listView);
 
-
+        Log.d("rid", PropertyManager.getInstance().getRegistrationToken());
         //액션바 설정
         TextView textView = new TextView(getApplicationContext());
         textView.setText("NewsFeed");

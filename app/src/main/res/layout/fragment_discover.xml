@@ -211,6 +211,7 @@
         android:layout_height="wrap_content"
         android:text="답변자"
         android:id="@+id/btn_answer"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone" />
 
 </LinearLayout>

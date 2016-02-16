@@ -12,8 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.wenwoandroidnew.HomeActivity;
 import com.wenwoandroidnew.R;
 import com.wenwoandroidnew.answerer.AnewsfeedActivity;
+import com.wenwoandroidnew.login.EmailLoginActivity;
 import com.wenwoandroidnew.system.module.ModuleUser;
 
 
@@ -76,6 +78,10 @@ public class DiscoverFragment extends Fragment  {
 
                     public void onClick(DialogInterface arg0, int arg1) {
                         ModuleUser.logout();
+                        Intent intent = new Intent(getActivity() ,HomeActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+
                         Toast.makeText(getContext(), "로그아웃완료", Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -90,13 +96,13 @@ public class DiscoverFragment extends Fragment  {
         });
 
 
-        view.findViewById(R.id.btn_answer).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent a = new Intent(getActivity(),AnewsfeedActivity.class);
-                startActivity(a);
-            }
-        });
+//        view.findViewById(R.id.btn_answer).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent a = new Intent(getActivity(),AnewsfeedActivity.class);
+//                startActivity(a);
+//            }
+//        });
 
 
 

@@ -72,8 +72,7 @@ public class HomeActivity extends AppCompatActivity  implements MyDialogFragment
     }
 
     public void onWechatLogin(View view) {
-        Toast.makeText(getApplicationContext(), "TEST", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(getApplicationContext(), WechatLoginActivity.class));
+        Toast.makeText(getApplicationContext(), "서비스 준비중입니다.", Toast.LENGTH_SHORT).show();
     }
 
     public void onEmailLogin(View view) {

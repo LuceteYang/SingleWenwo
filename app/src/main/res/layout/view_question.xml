@@ -124,7 +124,8 @@
                 android:layout_toEndOf="@+id/tv_answer_level"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
-                android:layout_marginTop="2dp" />
+                android:layout_marginTop="2dp"
+                android:visibility="gone" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -132,7 +133,8 @@
                 android:id="@+id/text_question_time"
                 android:layout_marginTop="2dp"
                 android:textColor="#646464"
-                android:textSize="8sp" />
+                android:textSize="8sp"
+                android:visibility="gone" />
 
 
         </LinearLayout>

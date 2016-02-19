@@ -2,6 +2,8 @@ package com.wenwoandroidnew.question;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationListener;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -19,11 +21,19 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.location.LocationServices;
 import com.wenwoandroidnew.HomeActivity;
+import com.wenwoandroidnew.LocationAddress;
 import com.wenwoandroidnew.R;
+import com.wenwoandroidnew.discover.MyLocation;
+import com.wenwoandroidnew.discover.WeatherActivity;
 import com.wenwoandroidnew.system.common.CallResult;
+import com.wenwoandroidnew.system.common.CallResultOnemore;
+import com.wenwoandroidnew.system.model.query.ModelGeocodingQuery;
 import com.wenwoandroidnew.system.model.query.ModelQuestionRegisterQuery;
+import com.wenwoandroidnew.system.module.ModuleGeocoding;
 import com.wenwoandroidnew.system.module.ModuleQuestion;
+import com.wenwoandroidnew.system.module.ModuleWeather;
 import com.wenwoandroidnew.system.util.AppSetting;
 import com.wenwoandroidnew.system.util.UtilUi;
 
@@ -53,6 +63,8 @@ public class QuestionRegisterFragment extends Fragment implements CallResult<Boo
     TextView recommendSeedView;
     int seed;
     int recommendSeed;
+    String lat;
+    String lon;
 
     public QuestionRegisterFragment() {
         // Required empty public constructor
@@ -71,10 +83,20 @@ public class QuestionRegisterFragment extends Fragment implements CallResult<Boo
                 }
                 dialog = UtilUi.showWaitDialog( getContext() , "질문내용 저장중..."); // 다이아로그 띄우기
                 if(location==true) {
-                    this.questionRegister.setSi("서울특별시");
-                    this.questionRegister.setGu("관악구");
-                    this.questionRegister.setDong("신림동");
+                    this.questionRegister.setMyloc("true");
+                    MyLocation.LocationResult locationResult = new MyLocation.LocationResult() {
+                        @Override
+                        public void gotLocation(Location location) {
+                            lat = Double.toString(location.getLatitude());
+                            lon = Double.toString(location.getLongitude());
+                        }
+                    };
+                    this.questionRegister.setLat(lat);
+                    this.questionRegister.setLon(lon);
                 }
+                this.questionRegister.setSi("서울특별시");
+                this.questionRegister.setGu("관악구");
+                this.questionRegister.setDong("신림동");
                 this.questionRegister.setCategory(tvDirectory.getText().toString());
                 this.questionRegister.setSpentSeed(tvSeed.getText().toString());
                 this.questionRegister.setOpen(Boolean.toString(open));
@@ -297,3 +319,6 @@ public class QuestionRegisterFragment extends Fragment implements CallResult<Boo
     }
 
 }
+
+
+

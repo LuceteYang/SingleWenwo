@@ -23,13 +23,12 @@ public class DoQuestionList extends AsyncTask<ModelQuestionQuery, String , Strin
 
         String latitude = params[0].a;
         String longitude = params[0].b;
-
-        String url = UtilAPIControll.makeGeocodingRESTURL(UtilAPIControll.GEOCODDING_URL, latitude, longitude);
-        String juso = UtilAPIControll.callGEOServerData(url, UtilAPIControll.GEOCODING_JSON);
+        String url;
         boolean isFirstStart = params[0].isFirstStart;
-
-        Gson gson = new Gson();
-        ModelGeocoding result = gson.fromJson(juso, ModelGeocoding.class);
+//        url = UtilAPIControll.makeGeocodingRESTURL(UtilAPIControll.GEOCODDING_URL, latitude, longitude);
+//        String juso = UtilAPIControll.callGEOServerData(url, UtilAPIControll.GEOCODING_JSON);
+//        Gson gson = new Gson();
+//        ModelGeocoding result = gson.fromJson(juso, ModelGeocoding.class);
 
         Hashtable<String, String>  tableParam = new Hashtable<>();
 

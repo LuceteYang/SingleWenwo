@@ -21,6 +21,9 @@ public class ModelQuestionRegisterQuery implements Serializable{
     private String dueTile = "";
     private String open = "";
     private String type = "";
+    private String lat;
+    private String lon;
+    private String myloc="false";
 
     private boolean success = false;
     private Error error;
@@ -152,5 +155,30 @@ public class ModelQuestionRegisterQuery implements Serializable{
 
     public void setOpen(String open) {
         this.open = open;
+    }
+
+    public String getLat() {
+        return lat;
+    }
+
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
+
+    public String getLon() {
+        return lon;
+    }
+
+    public void setLon(String lon) {
+        this.lon = lon;
+    }
+
+
+    public String getMyloc() {
+        return myloc;
+    }
+
+    public void setMyloc(String myloc) {
+        this.myloc = myloc;
     }
 }

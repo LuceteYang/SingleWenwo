@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.wenwoandroidnew.system.model.ModelGeocoding;
 import com.wenwoandroidnew.system.model.query.ModelQuestionRegisterQuery;
 import com.wenwoandroidnew.system.AppGlobalSetting;
 import com.wenwoandroidnew.system.common.CommonListResult;
@@ -24,7 +25,15 @@ public class DoQuestionRegister extends AsyncTask<ModelQuestionRegisterQuery, St
         obj.put("title", params[0].getTitle());
         obj.put("category",  params[0].getCategory());
         obj.put("text", params[0].getText());
-        if(params[0].getSi()!=null){
+        if(params[0].getMyloc().equals("true")){
+           String url = UtilAPIControll.makeGeocodingRESTURL(UtilAPIControll.GEOCODDING_URL, params[0].getLat(), params[0].getLon());
+            String juso = UtilAPIControll.callGEOServerData(url, UtilAPIControll.GEOCODING_JSON);
+            Gson gson = new Gson();
+            ModelGeocoding result = gson.fromJson(juso, ModelGeocoding.class);
+            obj.put("si", result.getAddressInfo().getCity_do());
+            obj.put("gu", result.getAddressInfo().getGu_gun());
+            obj.put("dong", result.getAddressInfo().getLegalDong());
+        }else{
             obj.put("si", params[0].getSi());
             obj.put("gu", params[0].getGu());
             obj.put("dong", params[0].getDong());

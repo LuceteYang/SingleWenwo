@@ -24,7 +24,6 @@ import com.wenwoandroidnew.system.model.ModelAnswerList;
 import com.wenwoandroidnew.system.model.query.ModelAnswerPickQuery;
 import com.wenwoandroidnew.system.module.ModelPicture;
 import com.wenwoandroidnew.system.module.ModuleAnswer;
-import com.wenwoandroidnew.system.util.UtilUi;
 
 import java.util.ArrayList;
 import java.util.List;

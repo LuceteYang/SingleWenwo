@@ -63,13 +63,18 @@ public class QuestionRegisterFragment extends Fragment implements CallResult<Boo
     TextView recommendSeedView;
     int seed;
     int recommendSeed;
-    String lat;
-    String lon;
+    String lat=null;
+    String lon=null;
+    MyLocation myLocation = new MyLocation();
+    MyLocation.LocationResult locationResult;
+
 
     public QuestionRegisterFragment() {
         // Required empty public constructor
         this.setHasOptionsMenu(true);
     }
+
+
 
 
     @Override
@@ -83,14 +88,11 @@ public class QuestionRegisterFragment extends Fragment implements CallResult<Boo
                 }
                 dialog = UtilUi.showWaitDialog( getContext() , "질문내용 저장중..."); // 다이아로그 띄우기
                 if(location==true) {
+                    if(lat==null){
+                        Toast.makeText(getActivity(),"Location null", Toast.LENGTH_SHORT).show();
+                        return false;
+                    }
                     this.questionRegister.setMyloc("true");
-                    MyLocation.LocationResult locationResult = new MyLocation.LocationResult() {
-                        @Override
-                        public void gotLocation(Location location) {
-                            lat = Double.toString(location.getLatitude());
-                            lon = Double.toString(location.getLongitude());
-                        }
-                    };
                     this.questionRegister.setLat(lat);
                     this.questionRegister.setLon(lon);
                 }
@@ -141,9 +143,21 @@ public class QuestionRegisterFragment extends Fragment implements CallResult<Boo
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 location = isChecked;
-                Toast.makeText(getActivity(), "showtext" + Boolean.toString(locationSC.isChecked()),Toast.LENGTH_SHORT).show();
+                locationResult = new MyLocation.LocationResult() {
+                    @Override
+                    public void gotLocation(Location location) {
+                        lat = Double.toString(location.getLatitude());
+                        lon = Double.toString(location.getLongitude());
+                    }
+                };
+
+                if(!myLocation.getLocation(getActivity(), locationResult)){
+                    Toast.makeText(getActivity(),"Location null", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
+
 
 
         Bundle b = getArguments();

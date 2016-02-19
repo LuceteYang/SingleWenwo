@@ -12,6 +12,8 @@ import com.wenwoandroidnew.system.common.CommonListResult;
 import com.wenwoandroidnew.system.model.JsonNULL;
 import com.wenwoandroidnew.system.util.UtilAPIControll;
 
+import org.json.JSONException;
+
 import java.util.Hashtable;
 
 
@@ -19,20 +21,25 @@ public class DoQuestionRegister extends AsyncTask<ModelQuestionRegisterQuery, St
     @Override
     protected String doInBackground(ModelQuestionRegisterQuery... params) {
 
-
         Hashtable<String, String> obj = new Hashtable<>();
 //        obj.put("qemail",  params[0].getQemail());
         obj.put("title", params[0].getTitle());
         obj.put("category",  params[0].getCategory());
         obj.put("text", params[0].getText());
         if(params[0].getMyloc().equals("true")){
-           String url = UtilAPIControll.makeGeocodingRESTURL(UtilAPIControll.GEOCODDING_URL, params[0].getLat(), params[0].getLon());
-            String juso = UtilAPIControll.callGEOServerData(url, UtilAPIControll.GEOCODING_JSON);
-            Gson gson = new Gson();
-            ModelGeocoding result = gson.fromJson(juso, ModelGeocoding.class);
-            obj.put("si", result.getAddressInfo().getCity_do());
-            obj.put("gu", result.getAddressInfo().getGu_gun());
-            obj.put("dong", result.getAddressInfo().getLegalDong());
+            try {
+                Log.d("latlon",params[0].getLat());
+                String url = UtilAPIControll.makeGeocodingRESTURL(UtilAPIControll.GEOCODDING_URL, params[0].getLat(), params[0].getLon());
+                String juso = UtilAPIControll.callGEOServerData(url, UtilAPIControll.GEOCODING_JSON);
+                Log.d("d",juso);
+                Gson gson = new Gson();
+                ModelGeocoding result = gson.fromJson(juso, ModelGeocoding.class);
+                obj.put("si", result.getAddressInfo().getCity_do());
+                obj.put("gu", result.getAddressInfo().getGu_gun());
+                obj.put("dong", result.getAddressInfo().getLegalDong());
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
         }else{
             obj.put("si", params[0].getSi());
             obj.put("gu", params[0].getGu());
@@ -42,7 +49,7 @@ public class DoQuestionRegister extends AsyncTask<ModelQuestionRegisterQuery, St
         obj.put("open", params[0].getOpen());
         obj.put("type" , params[0].getType());
         obj.put("spentSeed",params[0].getSpentSeed());
-        Log.d("dd",obj.toString());
+        Log.d("dd", obj.toString());
 
         return UtilAPIControll.callPostFileServerData(
                         UtilAPIControll.makePostRESTURL(UtilAPIControll.API_QUESTION),

@@ -22,6 +22,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.ErrorDialogFragment;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -49,22 +50,10 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 
-public class AllFeedFragment extends Fragment implements  CallResult<ModelQuestionList>, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener,
-        LocationListener {
+public class AllFeedFragment extends Fragment implements  CallResult<ModelQuestionList>{
     FeedAdapter mAdapter;
 //이게 데모용
     private PullToRefreshListView listView;
-
-    GoogleApiClient mGoogleApiClient;
-    // Request code to use when launching the resolution activity
-    private static final int REQUEST_RESOLVE_ERROR = 1001;
-    // Unique tag for the error dialog fragment
-    private static final String DIALOG_ERROR = "dialog_error";
-    // Bool to track whether the app is already resolving an error
-    private boolean mResolvingError = false;
-    public static final int RESULT_OK = -1;
-    private static final String STATE_RESOLVING_ERROR = "resolving_error";
-
     private Dialog dialog;
 
     public AllFeedFragment() {
@@ -104,24 +93,6 @@ public class AllFeedFragment extends Fragment implements  CallResult<ModelQuesti
                     }
             });
 
-        //처음 api설정 객체 생성
-        mGoogleApiClient = new GoogleApiClient.Builder(getActivity())
-                .addApi(LocationServices.API)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this).build();
-        //스코프를 가지는 경우 addscope로 등록해준다.
-
-        if (mGoogleApiClient.isConnected()) {   //구글 크라이언트와 연결되었는지 확인하고
-            //Location Update를 위해 리퀘스트객체 생성
-            LocationRequest request = LocationRequest.create();
-            request.setInterval(100);     //시간설정
-            request.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);    //위치정보를 어떻게 수집하겠느냐
-            request.setNumUpdates(1);       //한번만수신하겠어
-            LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, request, this);
-        }
-        //리스너를 달아줍니다.
-
-
         ModelQuestionQuery query = new ModelQuestionQuery();
         query.call_type = AppSetting.FEED_CALL_TYPE.ALL; // 리스트 타입을 넣어줌
         query.isFirstStart = true;
@@ -151,40 +122,6 @@ public class AllFeedFragment extends Fragment implements  CallResult<ModelQuesti
 
         return view;
     }
-
-
-    //requestLocation에 의해 위치정보 바뀌면 호출됨
-    @Override
-    public void onLocationChanged(Location location) {
-//        messageView.setText(location.getLatitude() + "," + location.getLongitude());
-    }
-
-    //더이상 위치정보를 수신하지 않기위해서서
-    protected void stopLocationUpdates() {
-        LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);
-    }
-
-
-    @Override
-    public void onConnected(Bundle bundle) {
-        //LastNkownLocation을 획득한다.
-        Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-        if (location != null) {
-
-//            ModelQuestionQuery query = new ModelQuestionQuery();
-//            query.a = String.valueOf(location.getLatitude());
-//            query.b = String.valueOf(location.getLongitude());
-//            query.call_type = AppSetting.FEED_CALL_TYPE.ALL; // 리스트 타입을 넣어줌
-//
-//            dialog = UtilUi.showWaitDialog(getContext() , "ALL Feed 조회중..."); // 다이아로그 띄우기
-//
-//            ModuleQuestion.getQuestionList(this, query);
-
-        } else {
-//            Toast.makeText(getActivity(), "No Location", Toast.LENGTH_SHORT).show();
-        }
-    }
-
     @Override
     public void callResult(ModelQuestionList modelQuestionList) {
 
@@ -249,119 +186,5 @@ public class AllFeedFragment extends Fragment implements  CallResult<ModelQuesti
             mAdapter.add(d);
         }
         UtilUi.hideWaitDialog(dialog);
-    }
-
-    @Override
-    public void onConnectionSuspended(int i) {
-
-    }
-
-    //Error 발생시 ConnectionResult의 hasResolution()호출함
-    @Override
-    public void onConnectionFailed(ConnectionResult result) {
-        if (mResolvingError) {
-            // Already attempting to resolve an error.
-            return;
-        } else if (result.hasResolution()) {
-            try {
-                mResolvingError = true;
-                result.startResolutionForResult(getActivity(), REQUEST_RESOLVE_ERROR);
-            } catch (IntentSender.SendIntentException e) {
-                // There was an error with the resolution intent. Try again.
-                mGoogleApiClient.connect();
-            }
-        } else {
-            // Show dialog using GoogleApiAvailability.getErrorDialog()
-            showErrorDialog(result.getErrorCode());
-            mResolvingError = true;
-        }
-    }
-
-    // The rest of this code is all about building the error dialog
-
-    /* Creates a dialog for an error message */
-    private void showErrorDialog(int errorCode) {
-        // Create a fragment for the error dialog
-        ErrorDialogFragment dialogFragment = new ErrorDialogFragment();
-        // Pass the error that should be displayed
-        Bundle args = new Bundle();
-        args.putInt(DIALOG_ERROR, errorCode);
-        dialogFragment.setArguments(args);
-        dialogFragment.show(getActivity().getSupportFragmentManager(), "errordialog");
-    }
-
-    /* Called from ErrorDialogFragment when the dialog is dismissed. */
-    public void onDialogDismissed() {
-        mResolvingError = false;
-    }
-
-    /* A fragment to display an error dialog */
-    public static class ErrorDialogFragment extends DialogFragment {
-        public ErrorDialogFragment() {
-        }
-
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            // Get the error code and retrieve the appropriate dialog
-            int errorCode = this.getArguments().getInt(DIALOG_ERROR);
-            return GoogleApiAvailability.getInstance().getErrorDialog(
-                    this.getActivity(), errorCode, REQUEST_RESOLVE_ERROR);
-        }
-
-        @Override
-        public void onDismiss(DialogInterface dialog) {
-//            ((MainActivity) getActivity()).onDialogDismissed();
-        }
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_RESOLVE_ERROR) {
-            mResolvingError = false;
-            if (resultCode == RESULT_OK) {
-                // Make sure the app is not already connected or attempting to connect
-                if (!mGoogleApiClient.isConnecting() && !mGoogleApiClient.isConnected()) {
-                    mGoogleApiClient.connect();
-                }
-            }
-        }
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putBoolean(STATE_RESOLVING_ERROR, mResolvingError);
-    }
-
-    @Override
-    public void onStart() {      //구글서비스 코넥트
-        super.onStart();
-        if (!mResolvingError) {  // more about this later
-            mGoogleApiClient.connect();
-        }
-    }
-
-    @Override
-    public void onStop() {       //구글서비스 끊음
-        mGoogleApiClient.disconnect();
-        super.onStop();
-    }
-
-
-    //구글 GEOcoder메시지 핸들러
-    public class GeocoderHandler extends Handler {
-        @Override
-        public void handleMessage(Message message) {
-            String locationAddress;
-            switch (message.what) {
-                case 1:
-                    Bundle bundle = message.getData();
-                    locationAddress = bundle.getString("address");
-                    break;
-                default:
-                    locationAddress = null;
-            }
-//            Toast.makeText(getActivity(),locationAddress,Toast.LENGTH_LONG).show();
-        }
     }
 }

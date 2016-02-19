@@ -89,8 +89,8 @@ public class TextQuestionFragment extends Fragment {
         editcontent.setText("");
         Bundle b = getArguments();
         if(b!=null){
-            editTitle.setText("질문수정테스트");
-            editcontent.setText("질문수정테스트");
+//            editTitle.setText("질문수정테스트");
+//            editcontent.setText("질문수정테스트");
         }
 
         return view;

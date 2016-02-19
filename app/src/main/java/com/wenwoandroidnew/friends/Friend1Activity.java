@@ -117,25 +117,25 @@ public class Friend1Activity extends AppCompatActivity implements CallResult<Mod
         dialog = UtilUi.showWaitDialog(Friend1Activity.this , "Friend 조회중..."); // 다이아로그 띄우기
         ModuleFriend.getFriendList(this, AppGlobalSetting.getLocalLoginUser().getEmail());
 
-        header.etView.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                String keyword = s.toString();
-                searchFriend(keyword);
-//                listView.setFilterText(s.toString());
-//                mAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
+//        header.etView.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//                String keyword = s.toString();
+//                searchFriend(keyword);
+////                listView.setFilterText(s.toString());
+////                mAdapter.notifyDataSetChanged();
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//            }
+//        });
 
         if(header.etView==null)
         {

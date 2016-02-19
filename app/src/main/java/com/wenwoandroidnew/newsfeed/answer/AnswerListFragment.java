@@ -89,16 +89,20 @@ public class
             ModuleAnswer.getAnswerList(this, Integer.parseInt(item.getQnum()), 1);
         }
         footerview = new AnswerFooterView(getContext());
+
         //번들을 통해 값또 AnswerCheckActivity에 전달
-        footerview.Adopt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), AnswerCheckActivity.class);
-                i.putExtra("status", item.getStatus());
-                i.putExtra("qnum", item.getQnum());
-                startActivity(i);
-            }
-        });
+        if(item.getStatus().equals("1")){
+            footerview.Adopt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(getActivity(), AnswerCheckActivity.class);
+                    i.putExtra("status", item.getStatus());
+                    i.putExtra("qnum", item.getQnum());
+                    startActivity(i);
+                }
+            });
+        }
+
 
 
         return view;

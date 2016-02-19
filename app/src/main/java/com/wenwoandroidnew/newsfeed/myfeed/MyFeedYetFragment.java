@@ -1,7 +1,10 @@
 package com.wenwoandroidnew.newsfeed.myfeed;
 
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -15,7 +18,9 @@ import android.widget.Toast;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.wenwoandroidnew.HomeActivity;
 import com.wenwoandroidnew.R;
+import com.wenwoandroidnew.answerer.AnswerActivity;
 import com.wenwoandroidnew.newsfeed.FeedAdapter;
 import com.wenwoandroidnew.newsfeed.QuestionItem;
 import com.wenwoandroidnew.newsfeed.answer.AnswerListFragment;
@@ -56,7 +61,7 @@ public class MyFeedYetFragment extends Fragment implements CallResult<ModelQuest
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                QuestionItem item = mAdapter.getItem(position-1);
+                final QuestionItem item = mAdapter.getItem(position-1);
                 if(item.getStatus().equals("0")){
                     AnswerListFragment dialog = new AnswerListFragment();
                     Bundle b = new Bundle();
@@ -70,7 +75,27 @@ public class MyFeedYetFragment extends Fragment implements CallResult<ModelQuest
                     dialog.setArguments(b);
                     dialog.show(getActivity().getSupportFragmentManager(), "answer");
                 }else if(item.getStatus().equals("2")){
-                    Toast.makeText(getActivity(),"질문수정....준비중입니다",Toast.LENGTH_SHORT).show();
+                    AlertDialog.Builder myAlertDialog = new AlertDialog.Builder(getActivity());
+                    myAlertDialog.setTitle("질문등록");
+                    myAlertDialog.setMessage("질문등록 하시러 하시겠습니까?");
+                    myAlertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            Intent intent = new Intent(getContext(), HomeActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.putExtra("modify", "TRUE");
+                            intent.putExtra("Status", item.getType());
+                            getContext().startActivity(intent);
+                            getActivity().finish();
+                        }
+                    });
+                    myAlertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+
+                        public void onClick(DialogInterface arg0, int arg1) {
+
+                        }
+                    });
+                    myAlertDialog.show();
                 }
             }
         });

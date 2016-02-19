@@ -101,17 +101,18 @@ public class AnswerAdapter extends BaseAdapter {
                         v.getContext().startActivity(intent);
                     }
                 });
-
-                view.getModifyImage().setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(v.getContext(), HomeActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        intent.putExtra("modify","TRUE");
-                        intent.putExtra("Status",view.getQuestionInfo().getType());
-                        v.getContext().startActivity(intent);
-                    }
-                });
+                if(view.getQuestionInfo().getStatus().equals("1")){
+                    view.getModifyImage().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+/*                            Intent intent = new Intent(v.getContext(), HomeActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.putExtra("modify","TRUE");
+                            intent.putExtra("Status",view.getQuestionInfo().getType());
+                            v.getContext().startActivity(intent);*/
+                        }
+                    });
+                }
                 return view;
             }
             case TYPE_INDEX_ANSWER: {

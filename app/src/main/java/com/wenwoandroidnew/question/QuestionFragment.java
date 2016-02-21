@@ -43,17 +43,40 @@ public class QuestionFragment extends Fragment {
         Bundle b = getArguments();
         tabHost = (FragmentTabHost)view.findViewById(R.id.tabHost);
         tabHost.setup(getActivity(), getChildFragmentManager(), R.id.question_content);
-        if(b!=null) {
-            Bundle myBundle = new Bundle();
-            String status = b.getString("Status");
-            myBundle.putString("Status", status);
-            tabHost.addTab(tabHost.newTabSpec("tab_text").setIndicator(null, getResources().getDrawable(R.drawable.tab_question_text)), TextQuestionFragment.class, myBundle);
-        }else{
-            tabHost.addTab(tabHost.newTabSpec("tab_text").setIndicator(null, getResources().getDrawable(R.drawable.tab_question_text)), TextQuestionFragment.class, null);
-        }
-        tabHost.addTab(tabHost.newTabSpec("tab_picture").setIndicator(null, getResources().getDrawable(R.drawable.tab_question_picture)), PictureQuestionFragment.class, null);
-        tabHost.addTab(tabHost.newTabSpec("tab_voice").setIndicator(null, getResources().getDrawable(R.drawable.tab_question_voice)), VoiceQuestionFragment.class, null);
-        setTabColor(tabHost);
+        Bundle myBundle = new Bundle();
+            if(b!=null){
+                String status = b.getString("Status");
+                String title = b.getString("title");
+                String context = b.getString("context");
+                Log.d("questionfragment",status+title+context);
+                if(status.equals("0")) {
+                myBundle.putString("Status", status);
+                myBundle.putString("title",title);
+                myBundle.putString("context",context);
+                tabHost.addTab(tabHost.newTabSpec("tab_text").setIndicator(null, getResources().getDrawable(R.drawable.tab_question_text)), TextQuestionFragment.class, myBundle);
+                tabHost.addTab(tabHost.newTabSpec("tab_picture").setIndicator(null, getResources().getDrawable(R.drawable.tab_question_picture)), PictureQuestionFragment.class, null);
+                tabHost.addTab(tabHost.newTabSpec("tab_voice").setIndicator(null, getResources().getDrawable(R.drawable.tab_question_voice)), VoiceQuestionFragment.class, null);
+                }else if(status.equals("1")) {
+                myBundle.putString("Status", status);
+                myBundle.putString("title",title);
+                myBundle.putString("context",context);
+                tabHost.addTab(tabHost.newTabSpec("tab_text").setIndicator(null, getResources().getDrawable(R.drawable.tab_question_text)), TextQuestionFragment.class, null);
+                tabHost.addTab(tabHost.newTabSpec("tab_picture").setIndicator(null, getResources().getDrawable(R.drawable.tab_question_picture)), PictureQuestionFragment.class, myBundle);
+                tabHost.addTab(tabHost.newTabSpec("tab_voice").setIndicator(null, getResources().getDrawable(R.drawable.tab_question_voice)), VoiceQuestionFragment.class, null);
+                }else if(status.equals("2")){
+                myBundle.putString("Status", status);
+                myBundle.putString("title",title);
+                myBundle.putString("context",context);
+                tabHost.addTab(tabHost.newTabSpec("tab_text").setIndicator(null, getResources().getDrawable(R.drawable.tab_question_text)), TextQuestionFragment.class, null);
+                tabHost.addTab(tabHost.newTabSpec("tab_picture").setIndicator(null, getResources().getDrawable(R.drawable.tab_question_picture)), PictureQuestionFragment.class, null);
+                tabHost.addTab(tabHost.newTabSpec("tab_voice").setIndicator(null, getResources().getDrawable(R.drawable.tab_question_voice)), VoiceQuestionFragment.class, myBundle);
+                }
+            }else{
+                tabHost.addTab(tabHost.newTabSpec("tab_text").setIndicator(null, getResources().getDrawable(R.drawable.tab_question_text)), TextQuestionFragment.class, null);
+                tabHost.addTab(tabHost.newTabSpec("tab_picture").setIndicator(null, getResources().getDrawable(R.drawable.tab_question_picture)), PictureQuestionFragment.class, null);
+                tabHost.addTab(tabHost.newTabSpec("tab_voice").setIndicator(null, getResources().getDrawable(R.drawable.tab_question_voice)), VoiceQuestionFragment.class, null);
+            }
+            setTabColor(tabHost);
         if(b!=null) {
             String a = b.getString("Status");
             if (a.equals("0")) {

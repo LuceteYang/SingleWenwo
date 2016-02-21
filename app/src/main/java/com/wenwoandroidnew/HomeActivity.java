@@ -44,7 +44,11 @@ public class HomeActivity extends AppCompatActivity  implements MyDialogFragment
         if(b!=null) {
             Bundle myBundle = new Bundle();
             String status = b.getString("Status");
+            String title = b.getString("title");
+            String context = b.getString("context");
             myBundle.putString("Status", status);
+            myBundle.putString("title",title);
+            myBundle.putString("context",context);
             tabHost.addTab(tabHost.newTabSpec("tab_question").setIndicator(null, getResources().getDrawable(R.drawable.tab_question)), ParentQuestionFragment.class, myBundle);
         }else{
             tabHost.addTab(tabHost.newTabSpec("tab_question").setIndicator(null, getResources().getDrawable(R.drawable.tab_question)), ParentQuestionFragment.class, null);

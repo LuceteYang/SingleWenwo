@@ -1,6 +1,7 @@
 package com.wenwoandroidnew.newsfeed.myfeed;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.wenwoandroidnew.HomeActivity;
 import com.wenwoandroidnew.R;
 import com.wenwoandroidnew.newsfeed.FeedAdapter;
 import com.wenwoandroidnew.newsfeed.QuestionItem;
@@ -71,7 +73,13 @@ public class MyFeedAcceptFragment extends Fragment implements CallResult<ModelQu
                     dialog.setArguments(b);
                     dialog.show(getActivity().getSupportFragmentManager(), "answer");
                 }else if(item.getStatus().equals("2")){
-                    Toast.makeText(getActivity(),"질문수정....준비중입니다",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), HomeActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.putExtra("modify","TRUE");
+                    intent.putExtra("Status",item.getType());
+                    intent.putExtra("title",item.getQuestionTitle());
+                    intent.putExtra("context",item.getQuestionContext());
+                    startActivity(intent);
                 }
             }
         });

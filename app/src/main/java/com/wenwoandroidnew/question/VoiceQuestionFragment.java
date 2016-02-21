@@ -147,6 +147,15 @@ public class VoiceQuestionFragment extends Fragment {
         mTextView =(TextView) view.findViewById(R.id.text_input_counter);
         editcontent=(EditText)view.findViewById(R.id.et_question_content);
         editcontent.addTextChangedListener(mTextEditorWatcher);
+
+        Bundle b = getArguments();
+        if(b!=null){
+            editTitle.setText(b.getString("title"));
+            editcontent.setText(b.getString("context"));
+//            editTitle.setText("질문수정테스트");
+//            editcontent.setText("질문수정테스트");
+        }
+
         return view;
     }
 

@@ -108,6 +108,14 @@ public class PictureQuestionFragment extends Fragment {
         editTitle = (EditText)view.findViewById(R.id.et_question_title);
         ((ImageView) view.findViewById( R.id.load_image)).setOnClickListener(btnClick);
 
+        Bundle b = getArguments();
+        if(b!=null){
+            editTitle.setText(b.getString("title"));
+            editcontent.setText(b.getString("context"));
+//            editTitle.setText("질문수정테스트");
+//            editcontent.setText("질문수정테스트");
+        }
+
         return view;
     }
 

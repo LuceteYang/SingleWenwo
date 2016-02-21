@@ -84,9 +84,10 @@ public class MyFeedYetFragment extends Fragment implements CallResult<ModelQuest
                             Intent intent = new Intent(getContext(), HomeActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             intent.putExtra("modify", "TRUE");
-                            intent.putExtra("Status", item.getType());
-                            getContext().startActivity(intent);
-                            getActivity().finish();
+                            intent.putExtra("Status",item.getType());
+                            intent.putExtra("title",item.getQuestionTitle());
+                            intent.putExtra("context", item.getQuestionContext());
+                            startActivity(intent);
                         }
                     });
                     myAlertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

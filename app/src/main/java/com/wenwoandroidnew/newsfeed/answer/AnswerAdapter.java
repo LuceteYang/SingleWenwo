@@ -105,11 +105,13 @@ public class AnswerAdapter extends BaseAdapter {
                     view.getModifyImage().setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-/*                            Intent intent = new Intent(v.getContext(), HomeActivity.class);
+                            Intent intent = new Intent(v.getContext(), HomeActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            intent.putExtra("modify","TRUE");
+                            intent.putExtra("modify", "TRUE");
                             intent.putExtra("Status",view.getQuestionInfo().getType());
-                            v.getContext().startActivity(intent);*/
+                            intent.putExtra("title", view.getQuestionInfo().getQuestionTitle());
+                            intent.putExtra("context", view.getQuestionInfo().getQuestionContext());
+                            v.getContext().startActivity(intent);
                         }
                     });
                 }

@@ -97,12 +97,19 @@ public class MyFeedWaitFragment extends Fragment implements CallResult<ModelQues
                 query.call_type = AppSetting.FEED_CALL_TYPE.My_WAIT; // 리스트 타입을 넣어줌
                 query.isFirstStart = false;
                 query.status = "1";
-                if( dialog != null){
+                if (dialog != null) {
                     UtilUi.hideWaitDialog(dialog);
                 }
 
                 dialog = UtilUi.showWaitDialog(getContext(), "My Feed Progress refresh 조회중..."); // 다이아로그 띄우기
                 ModuleQuestion.getQuestionList(MyFeedWaitFragment.this, query);
+            }
+        });
+
+        listView.setOnLastItemVisibleListener(new PullToRefreshBase.OnLastItemVisibleListener() {
+
+            @Override
+            public void onLastItemVisible() {
             }
         });
 
@@ -128,11 +135,11 @@ public class MyFeedWaitFragment extends Fragment implements CallResult<ModelQues
     int index = 0;
     @Override
     public void callResult(ModelQuestionList modelQuestionList) {
-        listView.setRefreshing(false);
 
-        Toast.makeText(getActivity() , ""+index++, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity() , ""+index++, Toast.LENGTH_SHORT).show();
         if( modelQuestionList.getData() == null){
             Toast.makeText(getActivity(),"더이상 불러올 데이터가 없습니다!", Toast.LENGTH_SHORT).show();
+            listView.setRefreshing(false);
             return;
         }
         for (int i = 0; i < modelQuestionList.getData().size(); i++) {
@@ -179,6 +186,10 @@ public class MyFeedWaitFragment extends Fragment implements CallResult<ModelQues
             d.questionIcon = questionIcon;
 
             mAdapter.add(d);
+        }
+        Log.d(Integer.toString(modelQuestionList.getData().size()),"dd");
+        if(modelQuestionList.getData().size()<6){
+            listView.setRefreshing(false);
         }
         UtilUi.hideWaitDialog(dialog);
     }

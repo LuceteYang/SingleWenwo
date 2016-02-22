@@ -102,12 +102,19 @@ public class MyFeedAcceptFragment extends Fragment implements CallResult<ModelQu
                 query.call_type = AppSetting.FEED_CALL_TYPE.MY_ACCEPT; // 리스트 타입을 넣어줌
                 query.isFirstStart = false;
                 query.status = "0";
-                if( dialog != null){
+                if (dialog != null) {
                     UtilUi.hideWaitDialog(dialog);
                 }
 
                 dialog = UtilUi.showWaitDialog(getContext(), "My Feed Adoption refleshing 조회중..."); // 다이아로그 띄우기
                 ModuleQuestion.getQuestionList(MyFeedAcceptFragment.this, query);
+            }
+        });
+
+        listView.setOnLastItemVisibleListener(new PullToRefreshBase.OnLastItemVisibleListener() {
+
+            @Override
+            public void onLastItemVisible() {
             }
         });
         return view;
@@ -116,9 +123,9 @@ public class MyFeedAcceptFragment extends Fragment implements CallResult<ModelQu
     @Override
     public void callResult(ModelQuestionList modelQuestionList) {
 
-        listView.setRefreshing(false);
         if( modelQuestionList.getData() == null){
             Toast.makeText(getActivity(), "더이상 불러올 데이터가 없습니다!", Toast.LENGTH_SHORT).show();
+            listView.setRefreshing(false);
             return;
         }
         for (int i = 0; i < modelQuestionList.getData().size(); i++) {
@@ -164,6 +171,11 @@ public class MyFeedAcceptFragment extends Fragment implements CallResult<ModelQu
             d.questionIcon = questionIcon;
 
             mAdapter.add(d);
+        }
+
+        Log.d(Integer.toString(modelQuestionList.getData().size()),"dd");
+        if(modelQuestionList.getData().size()<6){
+            listView.setRefreshing(false);
         }
         UtilUi.hideWaitDialog(dialog);
     }

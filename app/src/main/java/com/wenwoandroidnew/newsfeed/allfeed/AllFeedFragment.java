@@ -120,16 +120,23 @@ public class AllFeedFragment extends Fragment implements  CallResult<ModelQuesti
             }
         });
 
+        listView.setOnLastItemVisibleListener(new PullToRefreshBase.OnLastItemVisibleListener() {
+
+            @Override
+            public void onLastItemVisible() {
+            }
+        });
+
+
         return view;
     }
     @Override
     public void callResult(ModelQuestionList modelQuestionList) {
 
-
-        listView.setRefreshing(false);
         if (modelQuestionList.getData() == null) {
             Toast.makeText(getActivity(), "더이상 불러올 데이터가 없습니다!", Toast.LENGTH_SHORT).show();
             UtilUi.hideWaitDialog(dialog);
+            listView.setRefreshing(false);
             return;
         }
         for (int i = 0; i < modelQuestionList.getData().size(); i++) {
@@ -173,7 +180,7 @@ public class AllFeedFragment extends Fragment implements  CallResult<ModelQuesti
             }
             d.setType(Integer.toString(mq.getType()));
 //            0:text, 1:image, 2:recording
-                if (mq.getType() == 0) {
+            if (mq.getType() == 0) {
                     questionIcon = getResources().getDrawable(R.drawable.blank);
             } else if (mq.getType() == 1) {
                 questionIcon = getResources().getDrawable(R.drawable.myfeed_img);
@@ -184,6 +191,10 @@ public class AllFeedFragment extends Fragment implements  CallResult<ModelQuesti
             d.questionIcon = questionIcon;
 
             mAdapter.add(d);
+        }
+        Log.d(Integer.toString(modelQuestionList.getData().size()),"dd");
+        if(modelQuestionList.getData().size()<6){
+            listView.setRefreshing(false);
         }
         UtilUi.hideWaitDialog(dialog);
     }

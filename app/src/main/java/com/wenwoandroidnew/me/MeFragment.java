@@ -89,11 +89,18 @@ public class MeFragment extends Fragment implements CallResult<ModelMagazineList
                 query.aemail = AppGlobalSetting.WRITER_EMAIL;
                 query.isFirstStart = false;
                 Log.d("writermagazine", query.toString());
-                if( dialog != null){
+                if (dialog != null) {
                     UtilUi.hideWaitDialog(dialog);
                 }
                 dialog = UtilUi.showWaitDialog(getContext(), "Me reflesh 조회중..."); // 다이아로그 띄우기
                 ModuleMagazineList.getMagazineList(MeFragment.this, query);
+            }
+        });
+
+        listView.setOnLastItemVisibleListener(new PullToRefreshBase.OnLastItemVisibleListener() {
+
+            @Override
+            public void onLastItemVisible() {
             }
         });
 

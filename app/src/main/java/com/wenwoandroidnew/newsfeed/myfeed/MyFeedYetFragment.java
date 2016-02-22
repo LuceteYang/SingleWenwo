@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -119,12 +120,19 @@ public class MyFeedYetFragment extends Fragment implements CallResult<ModelQuest
                 query.call_type = AppSetting.FEED_CALL_TYPE.MY_YET; // 리스트 타입을 넣어줌
                 query.isFirstStart = false;
                 query.status = "2";
-                if( dialog != null){
+                if (dialog != null) {
                     UtilUi.hideWaitDialog(dialog);
                 }
 
                 dialog = UtilUi.showWaitDialog(getContext(), "My Feed Closing Time reflesh 조회중..."); // 다이아로그 띄우기
                 ModuleQuestion.getQuestionList(MyFeedYetFragment.this, query);
+            }
+        });
+
+        listView.setOnLastItemVisibleListener(new PullToRefreshBase.OnLastItemVisibleListener() {
+
+            @Override
+            public void onLastItemVisible() {
             }
         });
 
@@ -135,9 +143,10 @@ public class MyFeedYetFragment extends Fragment implements CallResult<ModelQuest
 
     @Override
     public void callResult(ModelQuestionList modelQuestionList) {
-        listView.setRefreshing(false);
+
         if( modelQuestionList.getData() == null){
             Toast.makeText(getActivity(), "더이상 불러올 데이터가 없습니다!", Toast.LENGTH_SHORT).show();
+            listView.setRefreshing(false);
             return;
         }
         for (int i = 0; i < modelQuestionList.getData().size(); i++) {
@@ -184,6 +193,10 @@ public class MyFeedYetFragment extends Fragment implements CallResult<ModelQuest
             d.questionIcon = questionIcon;
 
             mAdapter.add(d);
+        }
+        Log.d(Integer.toString(modelQuestionList.getData().size()), "dd");
+        if(modelQuestionList.getData().size()<6){
+            listView.setRefreshing(false);
         }
         UtilUi.hideWaitDialog(dialog);
     }

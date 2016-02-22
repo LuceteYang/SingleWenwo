@@ -2,33 +2,19 @@ package com.wenwoandroidnew.contents;
 
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.wenwoandroidnew.ImageCache;
 import com.wenwoandroidnew.R;
-import com.wenwoandroidnew.contents.magazineDetail.MagazineDetailActivity;
-import com.wenwoandroidnew.me.ContentsItem;
-import com.wenwoandroidnew.me.MeFragment;
-import com.wenwoandroidnew.newsfeed.QuestionItem;
-import com.wenwoandroidnew.newsfeed.answer.AnswerListFragment;
-import com.wenwoandroidnew.newsfeed.answercheck.CheckAnswerView;
 import com.wenwoandroidnew.system.AppGlobalSetting;
 import com.wenwoandroidnew.system.common.CallResult;
 import com.wenwoandroidnew.system.model.ModelMagazineList;
@@ -36,7 +22,6 @@ import com.wenwoandroidnew.system.model.query.ModelMagazineQuery;
 import com.wenwoandroidnew.system.module.ModelPicture;
 import com.wenwoandroidnew.system.module.ModuleMagazineList;
 import com.wenwoandroidnew.system.util.AppSetting;
-import com.wenwoandroidnew.system.util.UtilAPIControll;
 import com.wenwoandroidnew.system.util.UtilUi;
 
 import java.util.ArrayList;
@@ -71,25 +56,27 @@ public class ContentsFragment extends Fragment implements CallResult<ModelMagazi
             dialog = UtilUi.showWaitDialog(getContext(), "Magazine 조회중..."); // 다이아로그 띄우기
             ModuleMagazineList.getMagazineList(this, query);
 
-        listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
-            @Override
-            public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
-            }
-
-            @Override
-            public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
-                ModelMagazineQuery query = new ModelMagazineQuery();
-                query.call_type = AppSetting.MAGAZINE_CALL_TYPE.ALL;
-                query.aemail = AppGlobalSetting.WRITER_EMAIL;
-                query.isFirstStart = false;
-                if( dialog != null){
-                    UtilUi.hideWaitDialog(dialog);
+            listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
+                @Override
+                public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
                 }
 
-                dialog = UtilUi.showWaitDialog(getContext(), "Magazine refleshing조회중..."); // 다이아로그 띄우기
-                ModuleMagazineList.getMagazineList(ContentsFragment.this, query);
-            }
-        });
+                @Override
+                public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
+                    ModelMagazineQuery query = new ModelMagazineQuery();
+                    query.call_type = AppSetting.MAGAZINE_CALL_TYPE.ALL;
+                    query.aemail = AppGlobalSetting.WRITER_EMAIL;
+                    query.isFirstStart = false;
+                    if (dialog != null) {
+                        UtilUi.hideWaitDialog(dialog);
+                    }
+
+                    dialog = UtilUi.showWaitDialog(getContext(), "Magazine refleshing조회중..."); // 다이아로그 띄우기
+                    ModuleMagazineList.getMagazineList(ContentsFragment.this, query);
+                }
+            });
+
+
 
         return view;
     }

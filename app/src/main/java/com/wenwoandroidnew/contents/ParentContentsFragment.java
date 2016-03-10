@@ -55,22 +55,17 @@ public class ParentContentsFragment extends Fragment {
     }
 
     private void ContentsFragmentChange(){
-        Log.i("login", Boolean.toString(AppGlobalSetting.isLocalLogin()));
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
         if(AppGlobalSetting.isLocalLogin()){
             if(getChildFragmentManager().findFragmentByTag(F5_TAG)==null){
-                Log.i("ddd", "1");
                 if(f5==null){
-                    Log.i("ddd", "2");
                     f5 = new ContentsFragment();
                 }
                 if(getChildFragmentManager().findFragmentByTag(F6_TAG)==null){
                     //로그인요구페이지가 없을때
-                    Log.i("ddd", "3");
                     ft.add(R.id.fragment_parent_contents, f5, F5_TAG);
                 }else{
                     //로그인요구페이지가 전에 떠있을때
-                    Log.i("ddd", "4");
                     ft.detach(getChildFragmentManager().findFragmentByTag(F6_TAG));
                     ft.add(R.id.fragment_parent_contents, f5, F5_TAG);
                 }
@@ -78,18 +73,14 @@ public class ParentContentsFragment extends Fragment {
             ft.commit();
         }else{
             if(getChildFragmentManager().findFragmentByTag(F6_TAG)==null){
-                Log.i("ddd", "5");
                 if(f6==null){
-                    Log.i("ddd", "6");
                     f6 = new LoginRequestFragment().newInstance("Contents");
                 }
                 if(getChildFragmentManager().findFragmentByTag(F5_TAG)==null){
                     //콘텐츠페이지가 없을때
-                    Log.i("ddd", "7");
                     ft.add(R.id.fragment_parent_contents, f6, F6_TAG);
                 }else{
                     //콘텐츠페이지가 전에 떠있을때
-                    Log.i("ddd", "8");
                     ft.detach(getChildFragmentManager().findFragmentByTag(F5_TAG));
                     ft.add(R.id.fragment_parent_contents, f6, F6_TAG);
                 }

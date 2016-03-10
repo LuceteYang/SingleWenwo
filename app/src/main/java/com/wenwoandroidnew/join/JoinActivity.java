@@ -25,6 +25,7 @@ import com.wenwoandroidnew.system.common.CallResult;
 import com.wenwoandroidnew.system.model.query.ModelJoinQuery;
 import com.wenwoandroidnew.system.model.query.ModelNickNameCheckQuery;
 import com.wenwoandroidnew.system.module.ModuleUser;
+import com.wenwoandroidnew.system.util.AppSetting;
 import com.wenwoandroidnew.system.util.UtilUi;
 
 import butterknife.Bind;
@@ -110,14 +111,11 @@ public class JoinActivity extends AppCompatActivity implements CallResult<Boolea
 
             @Override
             public void afterTextChanged(Editable s) {
-                jungbok=false;
+                jungbok = false;
             }
         });
 
-
-            Toast.makeText(JoinActivity.this,mantype+"가입, email : "+email,Toast.LENGTH_SHORT).
-
-            show();
+//            Toast.makeText(JoinActivity.this, mantype + "가입, email : " + email, Toast.LENGTH_SHORT).show();
 
             group.check(R.id.radio_man);
             group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()

@@ -85,7 +85,7 @@ public class AnswerCheckActivity extends AppCompatActivity implements CallResult
                 myAlertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface arg0, int arg1) {
-                        Toast.makeText(getApplicationContext(),"ANSWER_NUMBER"+anum,Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getApplicationContext(),"ANSWER_NUMBER"+anum,Toast.LENGTH_SHORT).show();
                         ModelAnswerPickQuery a = new ModelAnswerPickQuery();
                         a.anum=anum;
                         ModuleAnswer.doAnswerPick(AnswerCheckActivity.this, a);

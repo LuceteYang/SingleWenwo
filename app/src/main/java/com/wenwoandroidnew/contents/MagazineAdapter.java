@@ -11,6 +11,7 @@ import com.wenwoandroidnew.contents.magazineDetail.MagazineDetailActivity;
 import com.wenwoandroidnew.me.ContentsItem;
 import com.wenwoandroidnew.system.AppGlobalSetting;
 import com.wenwoandroidnew.system.common.BasicAdater;
+import com.wenwoandroidnew.system.util.AppSetting;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +41,9 @@ public class MagazineAdapter extends BasicAdater<Magazineitem> {
                 Magazineitem item = items.get(position);
                 Intent i = new Intent(v.getContext(), MagazineDetailActivity.class);
                 i.putExtra("tiger",item);
-                Log.d("magazineadpater",item.toString());
+                if( AppSetting.LOG_TYPE == true) {
+                    Log.d("magazineadpater", item.toString());
+                }
                 v.getContext().startActivity(i);
             }
         });
@@ -51,7 +54,9 @@ public class MagazineAdapter extends BasicAdater<Magazineitem> {
                 Magazineitem item = items.get(position);
                 Intent i = new Intent(v.getContext(), MagazineDetailActivity.class);
                 i.putExtra("tiger",item);
-                Log.d("magazineadpater",item.toString());
+                if( AppSetting.LOG_TYPE == true) {
+                    Log.d("magazineadpater", item.toString());
+                }
                 v.getContext().startActivity(i);
             }
         });

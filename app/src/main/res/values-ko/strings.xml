@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WenwoAndroid</string>
+    <string name="app_name">Wenwo</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="gcm_defaultSenderId">168927082394</string>
     <item type="id" name="auto_focus"/>

@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.wenwoandroidnew.system.common.CallResult;
 import com.wenwoandroidnew.system.module.ModuleFriend;
+import com.wenwoandroidnew.system.util.AppSetting;
 
 public class QRCodeActivity extends AppCompatActivity implements CallResult<Boolean> {
 
@@ -68,11 +69,11 @@ public class QRCodeActivity extends AppCompatActivity implements CallResult<Bool
                 String contents = intent.getStringExtra("SCAN_RESULT");
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
 
-                ModuleFriend.addFriend( this,contents );
-
-                Toast toast = Toast.makeText(this, "친구 Email:" + contents, Toast.LENGTH_LONG);
-                toast.show();
-
+                ModuleFriend.addFriend(this, contents);
+                if( AppSetting.LOG_TYPE == true) {
+                    Toast toast = Toast.makeText(this, "친구 Email:" + contents, Toast.LENGTH_LONG);
+                    toast.show();
+                }
                 finish();
             }
         }

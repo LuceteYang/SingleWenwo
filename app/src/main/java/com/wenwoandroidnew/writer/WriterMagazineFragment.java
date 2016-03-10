@@ -68,7 +68,6 @@ public class WriterMagazineFragment extends Fragment implements CallResult<Model
                 Magazineitem item = mAdapter.getItem(position);
                 Intent i = new Intent(getActivity(), MagazineDetailActivity.class);
                 i.putExtra("contents", item);
-                Log.i("dd", item.toString());
                 startActivity(i);
             }
         });

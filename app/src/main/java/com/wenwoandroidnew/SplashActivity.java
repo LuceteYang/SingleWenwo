@@ -33,6 +33,7 @@ import com.wenwoandroidnew.system.model.LocalLoginUser;
 import com.wenwoandroidnew.system.model.ModelUser;
 import com.wenwoandroidnew.system.model.query.ModelLoginQuery;
 import com.wenwoandroidnew.system.module.ModuleUser;
+import com.wenwoandroidnew.system.util.AppSetting;
 import com.wenwoandroidnew.system.util.UtilCommon;
 
 public class SplashActivity extends AppCompatActivity implements CallResult<ModelUser> {
@@ -71,15 +72,18 @@ public class SplashActivity extends AppCompatActivity implements CallResult<Mode
 
         // 로그인 상태 확인
         LocalLoginUser localLoginUser = ModuleUser.doLocalLoginStatus();
-        Log.d("dd",Boolean.toString(AppGlobalSetting.isLocalLogin()));
-
+        if( AppSetting.LOG_TYPE == true) {
+            Log.d("dd", Boolean.toString(AppGlobalSetting.isLocalLogin()));
+        }
         // 로그인여부에 따른 처리
         if ( localLoginUser == null) {
-            Toast.makeText(SplashActivity.this, "로그인 안됨", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(SplashActivity.this, "로그인 안됨", Toast.LENGTH_SHORT).show();
             this.startHomeActivity();
         } else {
-            Log.d("#########" , localLoginUser.getEmail() +" , " +  localLoginUser.getPassword() + " , " + PropertyManager.getInstance().getRegistrationToken());
-            ModuleUser.login(this,
+            if( AppSetting.LOG_TYPE == true) {
+                Log.d("#########", localLoginUser.getEmail() + " , " + localLoginUser.getPassword() + " , " + PropertyManager.getInstance().getRegistrationToken());
+            }
+                ModuleUser.login(this,
                     new ModelLoginQuery(localLoginUser.getEmail(),
                             localLoginUser.getPassword() ,
                             PropertyManager.getInstance().getRegistrationToken()) );
@@ -201,7 +205,7 @@ public class SplashActivity extends AppCompatActivity implements CallResult<Mode
         }
 
 
-        Toast.makeText(SplashActivity.this, "로그인완료", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(SplashActivity.this, "로그인완료", Toast.LENGTH_SHORT).show();
         this.startHomeActivity();
     }
 }

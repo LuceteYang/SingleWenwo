@@ -125,7 +125,6 @@ public class CurrencyActivity extends AppCompatActivity implements CallResult<Mo
         }
 
         public void afterTextChanged(Editable s) {
-            Log.d("dd",Boolean.toString(s.toString().equals("")));
             if(!s.toString().equals("")){
                 if(topState==bottomState){
                     resultText.setText(s.toString());
@@ -169,7 +168,6 @@ public class CurrencyActivity extends AppCompatActivity implements CallResult<Mo
     @Override
     public void callResult(ModelCurrency modelCurrency) {
         ModelCurrency.RateInfo mq = modelCurrency.getRates();
-        Log.d("dd",mq.toString());
         krw = mq.getKRW();
         cny = mq.getCNY();
     }

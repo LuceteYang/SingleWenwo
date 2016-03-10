@@ -70,7 +70,9 @@ public class AllFeedFragment extends Fragment implements  CallResult<ModelQuesti
         listView = (PullToRefreshListView) view.findViewById(R.id.all_freed_listView);
         mAdapter = new FeedAdapter();
         listView.setAdapter(mAdapter);
-        Log.i("registrationToken", PropertyManager.getInstance().getRegistrationToken());
+        if( AppSetting.LOG_TYPE == true) {
+            Log.i("registrationToken", PropertyManager.getInstance().getRegistrationToken());
+        }
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -192,7 +194,9 @@ public class AllFeedFragment extends Fragment implements  CallResult<ModelQuesti
 
             mAdapter.add(d);
         }
-        Log.d(Integer.toString(modelQuestionList.getData().size()),"dd");
+        if( AppSetting.LOG_TYPE == true) {
+            Log.d(Integer.toString(modelQuestionList.getData().size()), "dd");
+        }
         if(modelQuestionList.getData().size()<6){
             listView.setRefreshing(false);
         }

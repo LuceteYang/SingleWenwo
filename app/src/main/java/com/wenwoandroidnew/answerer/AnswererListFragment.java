@@ -140,6 +140,7 @@ public class
             d.AnswerCategory=mq.getCategory();
             d.AnswerStatus=Integer.toString(mq.getStatus());
             d.aemail = mq.getAemail();
+            d.type = Integer.toString(mq.getType());
 
             if (mq.getType() == 0) {
                 questionIcon = getResources().getDrawable(R.drawable.blank);

@@ -157,6 +157,13 @@ public class AnswerAdapter extends BaseAdapter {
                     }
                 });
 
+/*                if(view.getAnswerItemInfo().getType().equals("1")){
+                    Log.d("ddd",view.getAnswerItemInfo().getType());
+                    image.setVisibility(View.VISIBLE);
+                    image1.setVisibility(View.VISIBLE);
+                }*/
+
+
                 return view;
             }
             default: {

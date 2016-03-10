@@ -120,14 +120,14 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="125dp"
+            android:layout_height="wrap_content"
             android:transitionGroup="false"
             android:id="@+id/answerImageView"
             android:layout_below="@+id/tv_answer_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="31dp"
-            android:visibility="gone">
+            android:visibility="invisible">
 
             <ImageView
                 android:layout_width="160dp"

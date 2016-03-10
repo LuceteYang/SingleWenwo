@@ -48,7 +48,6 @@ public class QuestionFragment extends Fragment {
                 String status = b.getString("Status");
                 String title = b.getString("title");
                 String context = b.getString("context");
-                Log.d("questionfragment",status+title+context);
                 if(status.equals("0")) {
                 myBundle.putString("Status", status);
                 myBundle.putString("title",title);

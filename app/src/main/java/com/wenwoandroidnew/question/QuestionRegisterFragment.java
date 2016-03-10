@@ -135,7 +135,6 @@ public class QuestionRegisterFragment extends Fragment implements CallResult<Boo
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 open = isChecked;
-                Toast.makeText(getActivity(), "showtext" + Boolean.toString(nicknameSC.isChecked()),Toast.LENGTH_SHORT).show();
             }
         });
         locationSC = (SwitchCompat)view.findViewById(R.id.location_open);
@@ -316,7 +315,7 @@ public class QuestionRegisterFragment extends Fragment implements CallResult<Boo
 
         UtilUi.hideWaitDialog( dialog);
         if( aBoolean == Boolean.TRUE){
-            Toast.makeText( getActivity(), "성공", Toast.LENGTH_SHORT).show();
+//            Toast.makeText( getActivity(), "성공", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getActivity(), HomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);

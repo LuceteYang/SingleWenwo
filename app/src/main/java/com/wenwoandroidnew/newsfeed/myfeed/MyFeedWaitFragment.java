@@ -187,7 +187,9 @@ public class MyFeedWaitFragment extends Fragment implements CallResult<ModelQues
 
             mAdapter.add(d);
         }
-        Log.d(Integer.toString(modelQuestionList.getData().size()),"dd");
+        if( AppSetting.LOG_TYPE == true) {
+            Log.d(Integer.toString(modelQuestionList.getData().size()), "dd");
+        }
         if(modelQuestionList.getData().size()<6){
             listView.setRefreshing(false);
         }

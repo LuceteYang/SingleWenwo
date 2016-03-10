@@ -25,6 +25,7 @@ import com.wenwoandroidnew.system.AppGlobalSetting;
 import com.wenwoandroidnew.system.common.CallResult;
 import com.wenwoandroidnew.system.model.ModelAnswererInfo;
 import com.wenwoandroidnew.system.module.ModelPicture;
+import com.wenwoandroidnew.system.util.AppSetting;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +59,9 @@ public class WriterActivity extends AppCompatActivity implements CallResult<Mode
 
         Intent i = getIntent();
         String email =  i.getStringExtra("aemail");
-        Log.i("writerpage", email);
+        if( AppSetting.LOG_TYPE == true) {
+            Log.i("writerpage", email);
+        }
         AppGlobalSetting.WRITER_EMAIL = email;
         tabHost = (FragmentTabHost)findViewById(R.id.tabHost);
         tabHost.setup(getApplicationContext(), getSupportFragmentManager(), R.id.realtabcontent_writer);

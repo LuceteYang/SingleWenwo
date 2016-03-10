@@ -88,7 +88,6 @@ public class MeFragment extends Fragment implements CallResult<ModelMagazineList
                 query.call_type = AppSetting.MAGAZINE_CALL_TYPE.QUESTIONER;
                 query.aemail = AppGlobalSetting.WRITER_EMAIL;
                 query.isFirstStart = false;
-                Log.d("writermagazine", query.toString());
                 if (dialog != null) {
                     UtilUi.hideWaitDialog(dialog);
                 }

@@ -71,7 +71,7 @@ public class AnswerView extends FrameLayout {
             this.AnswerPersonPicture.setImageDrawable(getResources().getDrawable(R.drawable.default121));
         }
 
-        if(answerItemInfo.getAnswerStatus().equals("1")){
+        if(answerItemInfo.getType().equals("1")){
             if( answerItemInfo.getAnswerImage1() != null && answerItemInfo.getAnswerImage1().size()>0){
                 try {
                     // 이미지 뷰를 같이 넘겨서 그곳에 다운로드 받은 이미지 설정함
